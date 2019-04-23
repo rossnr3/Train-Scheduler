@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-----     Firebase Assignment - Train Scheduler     ----->
+<head>
+    <meta charset="UTF-8">
+    <title>Train Scheduler</title>
+
+    <!-----     Reset css     ----->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <!-----     Links to Bootstrap JS, Popper.js and jQuery     ----->
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
+
+    <!-----     Link to external stylesheet     ----->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-----     Links to Ajax, Firebase, momentjs & application script     ----->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="assets/javascript/train-app.js" defer></script>
+</head>
+
+<body>
+
+    <!-----     Bootstrap 4 container     ----->
+    <div class="container">
+
+        <!-----     Jumbotron     ----->
+        <div class="jumbotron bg-secondary text-light">
+            <h1 class="text-center">Anytime is Train Time</h1>
+            <h3 class="text-center">Choo Choo. Chee Chee.</h3>
+        </div>
+
+        <!-----     Current Train Schedule     ----->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-primary text-light">
+                    <h5 id="schedule-clock">Current Train Schedule - Time: 03:45 PM</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table thead-light table-bordered">
+                            <thead class="font-weight-bold">
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </thead>
+
+                            <!-----     Trains Schedule     ----->
+                            <tbody id="train-schedule">
+                                <tr>
+                                    <td>No train specified</td>
+                                    <td>No destination specified</td>
+                                    <td>0</td>
+                                    <td>00:01 AM</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----     Add a Train     ----->
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header bg-primary text-light">
+                    <h5>Add Train</h5>
+                </div>
+                <div class="card-body">
+                    <!-----     Add train form     ----->
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="name-input" class="font-weight-bold">
+                                Train Name:
+                            </label>
+                            <input class="form-control" id="name-input" 
+                                type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="dest-input" class="font-weight-bold">
+                                Destination:
+                            </label>
+                            <input class="form-control" id="dest-input" 
+                                type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="first-time" class="font-weight-bold">
+                                First Train Time (HH:mm - military time):
+                            </label>
+                            <input class="form-control" id="first-time" 
+                                type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency" class="font-weight-bold">
+                                Frequency (min):
+                            </label>
+                            <input class="form-control" id="frequency" 
+                                type="number">
+                        </div>
+                        <button class="btn btn-primary font-weight-bold" 
+                            id="add-train" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

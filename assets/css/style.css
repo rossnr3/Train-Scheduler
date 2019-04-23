@@ -1,0 +1,10 @@
+/*******************************************************************************
+* Stylesheet for Train Scheduler Assignment
+*******************************************************************************/
+
+/*  Page default settings */
+body {
+    background-image: url("../images/train-station.jpg");
+    font-size: 18px;
+    line-height: 1.5;
+}
