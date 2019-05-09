@@ -39,3 +39,7 @@ trains entered will display their current status when the page is re-loaded.
 The application will display all train schedules to all users utilizing the
 application concurrently. Data entered by one user will be immediately
 reflected on the schedules being viewed by other users.
+
+### Link to the deployed game
+
+[GitHub](https://rossnr3.github.io/Train-Scheduler/ "Train Scheduler")
